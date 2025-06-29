@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Klasifikasi Kematangan Apel Fuji</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .fade-in {
+        animation: fadeIn 1.2s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .btn-animate {
+        transition: transform 0.2s;
+      }
+      .btn-animate:active {
+        transform: scale(0.96);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient-background fade-in">
+      <div
+        class="container"
+        style="max-width: 600px; background: rgba(255, 255, 255, 0.97)"
+      >
+        <div class="header-title" style="font-size: 2em">
+          Klasifikasi Kematangan Apel Fuji
+        </div>
+        <hr />
+        <div style="text-align: center">
+          <img
+            src="{{ url_for('static', filename='images/apelfuji.png') }}"
+            alt="Apel Fuji"
+            style="
+              max-width: 160px;
+              border-radius: 12px;
+              box-shadow: 0 2px 10px rgba(200, 40, 60, 0.08);
+              margin-bottom: 18px;
+            "
+          />
+        </div>
+        <h2 style="text-align: center; color: #c1121f">Apa itu Apel Fuji?</h2>
+        <p style="text-align: justify; color: #444">
+          <b>Apel Fuji</b> adalah varietas apel unggulan yang berasal dari
+          Jepang dan kini sangat populer di seluruh dunia. Apel ini dikenal
+          dengan rasa manis, tekstur renyah, dan warna kulit merah kekuningan
+          yang menarik. Kandungan airnya tinggi, sehingga sangat segar saat
+          dikonsumsi langsung. Apel Fuji juga kaya akan vitamin, serat, dan
+          antioksidan yang baik untuk kesehatan.
+        </p>
+        <p style="text-align: justify; color: #444">
+          Dengan teknologi machine learning, kini Anda dapat mengetahui tingkat
+          kematangan Apel Fuji hanya dengan mengunggah foto buahnya. Coba
+          sekarang dan temukan tingkat kematangan Apel Fuji Anda!
+        </p>
+        <button
+          onclick="window.location.href='/klasifikasi'"
+          class="btn btn-primary btn-animate"
+          style="margin-top: 30px; font-size: 1.1em"
+        >
+          Mulai Klasifikasi
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
