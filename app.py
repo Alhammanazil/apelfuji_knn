@@ -5,7 +5,6 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
 import os
 
 app = Flask(__name__)
@@ -23,11 +22,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# Use Random Forest
-model = RandomForestClassifier(n_estimators=100, random_state=42, max_depth=10)
-model.fit(X_train_scaled, y_train)
-
-# KNN as backup
+# K-Nearest Neighbor (sesuai dengan skripsi)
 knn = KNeighborsClassifier(n_neighbors=3, metric='manhattan', weights='distance')
 knn.fit(X_train_scaled, y_train)
 
@@ -61,13 +56,10 @@ def classify_apple(features):
     elif 0.930 <= mean_g <= 0.940 and mean_s > 0.080:
         return 2  # Setengah matang
     else:
-        # Fallback dengan threshold yang lebih fleksibel
-        if mean_g > 0.950:
-            return 1  # Mentah
-        elif mean_g < 0.920:
-            return 3  # Matang
-        else:
-            return 2  # Setengah matang
+        # Fallback dengan KNN (sesuai skripsi)
+        features_scaled = scaler.transform([features])
+        prediction = knn.predict(features_scaled)[0]
+        return prediction
 
 @app.route('/')
 def index():
