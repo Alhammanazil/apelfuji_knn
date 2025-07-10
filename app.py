@@ -98,4 +98,4 @@ def klasifikasi():
     return render_template('klasifikasi.html', result=None, file=None)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
