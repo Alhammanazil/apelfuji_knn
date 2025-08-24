@@ -38,6 +38,20 @@ Aplikasi web untuk mengklasifikasikan tingkat kematangan apel Fuji berdasarkan a
 2. Klik tombol "KLASIFIKASI"
 3. Lihat hasil klasifikasi
 
+## Screenshots
+
+### Halaman Utama
+<img src="static/screenshots/index.png" alt="Halaman Utama" width="600">
+
+### Halaman Klasifikasi
+<img src="static/screenshots/klasifikasi.png" alt="Halaman Klasifikasi" width="600">
+
+### Hasil Klasifikasi - Apel Matang
+<img src="static/screenshots/klasifikasi-matang.png" alt="Hasil Klasifikasi Matang" width="600">
+
+### Hasil Klasifikasi - Apel Mentah
+<img src="static/screenshots/klasifikasi-mentah.png" alt="Hasil Klasifikasi Mentah" width="600">
+
 ## Algoritma
 
 Menggunakan ekstraksi fitur warna (RGB + HSV) dengan rule-based classification:
